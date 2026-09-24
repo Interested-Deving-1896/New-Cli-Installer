@@ -90,6 +90,7 @@ TEST_CASE("server profiles")
             REQUIRE(resolved.has_value());
             CHECK(std::ranges::contains(resolved->packages, "openssh"sv));
             CHECK_EQ(resolved->firewall_tcp_ports, std::vector<std::uint16_t>{22});
+            CHECK_EQ(resolved->default_kernel, "linux-cachyos-server");
             auto sshd = std::ranges::find(resolved->services, "sshd"sv, &gucc::profile::ServiceEntry::name);
             REQUIRE(sshd != resolved->services.end());
             CHECK_EQ(sshd->is_urgent, true);

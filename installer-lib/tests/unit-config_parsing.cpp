@@ -145,6 +145,33 @@ TEST_CASE("config parsing")
 
         CHECK(validate_headless_config(*cfg).has_value());
     }
+    SECTION("server edition headless (issue #35)")
+    {
+        auto cfg = parse_installer_config(R"({
+            "menus": 1,
+            "headless_mode": true,
+            "allow_auto_partition": true,
+            "device": "/dev/sda",
+            "fs_name": "btrfs",
+            "user_name": "admin",
+            "user_pass": "x",
+            "root_pass": "y",
+            "server_profile": "minimal",
+            "ssh_authorized_keys": ["ssh-ed25519 AAAA test"]
+        })"sv);
+        REQUIRE(cfg.has_value());
+        CHECK(!cfg->kernel.has_value());
+        CHECK(validate_headless_config(*cfg).has_value());
+
+        auto explicit_cfg = parse_installer_config(R"({
+            "menus": 1,
+            "headless_mode": true,
+            "server_profile": "minimal",
+            "kernel": "linux-cachyos-lts"
+        })"sv);
+        REQUIRE(explicit_cfg.has_value());
+        CHECK_EQ(explicit_cfg->kernel.value_or(""), "linux-cachyos-lts");
+    }
     SECTION("optionals")
     {
         auto cfg = parse_installer_config(R"({

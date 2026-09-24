@@ -261,6 +261,7 @@ auto resolve_server_profile(const ServerProfiles& profiles, std::string_view pro
     resolved.warnings            = profile.warnings;
     resolved.features            = profiles.baseline.features;
     resolved.ssh_authorized_keys = stable_unique(user_extras.ssh_authorized_keys);
+    resolved.default_kernel      = profiles.default_kernel;
 
     return resolved;
 }

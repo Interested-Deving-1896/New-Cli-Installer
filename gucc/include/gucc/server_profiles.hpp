@@ -64,6 +64,7 @@ struct ResolvedServerProfile {
     std::vector<std::string> warnings{};
     std::vector<std::string> features{};
     std::vector<std::string> ssh_authorized_keys{};
+    std::string default_kernel{};
 };
 
 // Parse a server-profiles doc
