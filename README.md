@@ -1,135 +1,91 @@
-<img src="./demo.gif" alt="Demo image"></img>
+# New-Cli-Installer
 
-# cachyos-new-installer
-CLI net-installer for CachyOS, inspired by manjaro-architect
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/New-Cli-Installer) [![KDE Eco](https://img.shields.io/badge/KDE%20Eco-certified-brightgreen?logo=kde&logoColor=white&style=flat-square)](https://eco.kde.org/) [![Blue Angel](https://img.shields.io/badge/Blue%20Angel-DE--UZ%20215-0055a4?style=flat-square)](https://www.blauer-engel.de/en/certification/criteria)
 
-This installer provides online installation for CachyOS.
 
-Fast and smooth installer for Arch based operating system.
+<!-- AI:start:what-it-does -->
+_Description pending._
+<!-- AI:end:what-it-does -->
 
-Requirements
-------------
-* C++23 feature required (tested with GCC 14.1.1 and Clang 18)
-Any compiler which support C++23 standard should work.
+## Architecture
 
-######
-## Installing from source
+<!-- AI:start:architecture -->
+_Architecture documentation pending._
+<!-- AI:end:architecture -->
 
-This is tested on Arch Linux, but *any* recent Linux with latest C++23 compiler should do:
+## Install
 
-```sh
-sudo pacman -Sy \
-    base-devel cmake pkg-config ninja clang mold llvm
+<!-- Add installation instructions here. This section is yours — the AI will not modify it. -->
+
+```bash
+git clone https://github.com/Interested-Deving-1896/New-Cli-Installer.git
+cd New-Cli-Installer
 ```
 
-### Cloning the source code
-```sh
-git clone https://github.com/cachyos/new-cli-installer.git
-cd new-cli-installer
-```
+## Usage
 
-### Building and Configuring
-#### cmake(recommended):
-To build, first, configure it(if you intend to install it globally, you
-might also want `-DCMAKE_INSTALL_PREFIX=/usr`):
-```sh
-cmake -S . -B build
-```
-Second, build it:
-```sh
-cmake --build build
-```
+<!-- Add usage examples here. This section is yours — the AI will not modify it. -->
 
-#### meson:
-To build, first, configure it (if you intend to install it globally, you
-might also want `--prefix=/usr`):
-```sh
-meson build
-```
-Second, compile it:
-```sh
-meson compile -C build
-```
+## Configuration
 
-Optionally, to disable developer environment:
-pass `-DENABLE_DEVENV=OFF` to cmake or `-Ddevenv=false` to meson when configuring the project.
+<!-- Document configuration options here. This section is yours — the AI will not modify it. -->
 
+## CI
 
-### Libraries used in this project
+<!-- AI:start:ci -->
+_CI documentation pending._
+<!-- AI:end:ci -->
 
-* [Functional Terminal (X) User interface](https://github.com/ArthurSonzogni/FTXUI) used for TUI.
-* [A modern formatting library](https://github.com/fmtlib/fmt) used for formatting strings, output and logging.
-* [Fast C++ logging library](https://github.com/gabime/spdlog) used for logging process of the installer.
-* [Parsing gigabytes of JSON per second](https://github.com/simdjson/simdjson) used for config deserialization.
-* [Curl for People](https://github.com/libcpr/cpr) used for connection check and maybe in future fetching netinstall config from github.
+## Mirror chain
 
-
-**Simple menu overview:**
-
-TODO: should be simple as Calamares Installer
-
----
-
-**Advanced menu overview:**
+<!-- AI:start:mirror-chain -->
+This repo is maintained in [`Interested-Deving-1896/New-Cli-Installer`](https://github.com/Interested-Deving-1896/New-Cli-Installer) and mirrored through:
 
 ```
-Main Menu
-|
-├── Prepare Installation
-|   ├── Set Virtual Console
-|   ├── List Devices
-|   ├── Partition Disk
-|   ├── RAID (WIP)
-|   ├── LUKS Encryption
-|   ├── Logical Volume Management (WIP)
-|   ├── Mount Partitions
-|   ├── Configure Installer Mirrorlist
-|   |   ├── Edit Pacman Configuration
-|   |   └── Rank Mirrors by Speed (TODO)
-|   |
-│   └── Refresh Pacman Keys
-|
-├── Install System
-│   ├── Install Base Packages
-│   ├── Install Desktop
-│   ├── Install Bootloader
-│   ├── Configure Base
-|   │   ├── Generate FSTAB
-|   │   ├── Set Hostname
-|   │   ├── Set System Locale
-|   │   ├── Set Timezone and Clock
-|   │   ├── Set Root Password
-|   │   └── Add New User(s)
-|   │
-│   ├── Install Custom Packages
-│   ├── System Tweaks
-|   │   ├── Enable Automatic Login
-|   │   └── Performance
-|   |       ├── I/O schedulers
-|   |       └── Swap configuration
-|   │
-│   ├── Review Configuration Files
-│   └── Chroot into Installation
-|
-└── System Rescue
-    ├── Install Hardware Drivers
-    │   ├── Install Display Drivers
-    │   └── Install Network Drivers (TODO)
-    |
-    ├── Install Bootloader
-    ├── Configure Base
-    |   └── ... (see 'Install System')
-    │
-    ├── Install Custom Packages
-    ├── Remove Packages
-    ├── Review Configuration Files
-    ├── Chroot into Installation
-    ├── Data Recovery (TODO)
-    │   └── Btrfs snapshots..
-    │
-    └── View System Logs
-        ├── Dmesg
-        ├── Pacman log
-        ├── Xorg log
-        └── Journalctl
+Interested-Deving-1896/New-Cli-Installer  ──►  OpenOS-Project-OSP/New-Cli-Installer  ──►  OpenOS-Project-Ecosystem-OOC/New-Cli-Installer
 ```
+
+Changes flow downstream automatically via the hourly mirror chain in
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all).
+Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-Deving-1896`.
+<!-- AI:end:mirror-chain -->
+
+## Contributors
+
+<!-- AI:start:contributors -->
+_Contributors pending._
+<!-- AI:end:contributors -->
+
+## Origins
+
+<!-- AI:start:origins -->
+_Original project — no upstream influences recorded._
+<!-- AI:end:origins -->
+
+## Resources
+
+<!-- AI:start:resources -->
+_No additional resource files found._
+<!-- AI:end:resources -->
+
+## Accessibility
+
+<!-- AI:start:accessibility -->
+This repo uses automated accessibility auditing via `check-accessibility.yml`.
+
+Checks include: CODEOWNERS ownership coverage, README screen-reader compatibility,
+WCAG 2.1 AA HTML compliance, audio overview (espeak-ng), and Braille output (liblouis).
+
+
+
+
+Run the [Check Accessibility](https://github.com/Interested-Deving-1896/New-Cli-Installer/actions/workflows/check-accessibility.yml)
+workflow to generate the first report and accessibility artifacts.
+See [DOCS/accessibility.md](https://github.com/Interested-Deving-1896/New-Cli-Installer/blob/main/DOCS/accessibility.md) for the full reference.
+<!-- AI:end:accessibility -->
+
+## License
+
+<!-- AI:start:license -->
+[GPL-3.0](https://github.com/Interested-Deving-1896/New-Cli-Installer/blob/master/LICENSE) © 2026 [Interested-Deving-1896](https://github.com/Interested-Deving-1896)
+<!-- AI:end:license -->
