@@ -60,6 +60,7 @@ Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-
 | [@ptr1337](https://github.com/ptr1337) | 6 |
 | [@ventureoo](https://github.com/ventureoo) | 2 |
 | [@mhk2012](https://github.com/mhk2012) | 2 |
+| [@Interested-Deving-1896](https://github.com/Interested-Deving-1896) | 1 |
 <!-- AI:end:contributors -->
 
 ## Origins
